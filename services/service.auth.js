@@ -1,5 +1,5 @@
-const { Router } = require("express");
-const db = require("../db.js");
+import { Router } from "express";
+import db from "../db.js";
 
 const router = Router();
 
@@ -42,7 +42,7 @@ router.post("/login", async (req, res) => {
         res.json({
             message: "Login exitoso",
             user: {
-                id: user.user_id,
+                id: user.user_id,          // 🔹 ID correcto del propietario
                 email: user.email,
                 role: user.role,
                 name: `${user.first_name} ${user.last_name}`
@@ -53,4 +53,4 @@ router.post("/login", async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

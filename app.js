@@ -1,8 +1,9 @@
-const express = require("express");
-const cors = require("cors");
-const usersService = require("./services/service.users.js");
-const apartmentService = require("./services/service.apartment.js");
-const authService = require("./services/service.auth.js");
+import express from "express";
+import cors from "cors";
+import usersService from "./services/service.users.js";
+import apartmentService from "./services/service.apartment.js";
+import authService from "./services/service.auth.js";
+import bookingService from "./services/service.booking.js";
 
 const app = express();
 
@@ -10,22 +11,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Ruta de prueba para verificar que el backend funciona
-app.get("/api/test", (req, res) => {
-    res.json({ 
-        message: "Backend funcionando correctamente", 
-        timestamp: new Date().toISOString(),
-        environment: process.env.NODE_ENV || 'development'
-    });
-});
-
 // Rutas
 app.use("/users", usersService);
 app.use("/apartment", apartmentService);
 app.use("/auth", authService);
+app.use("/booking", bookingService);
 
-const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => console.log("Servidor corriendo en http://localhost:3000"));
-
-
-module.exports = app;
+// Servidor
+app.listen(3000, () => console.log("Servidor corriendo en http://localhost:3000"));
