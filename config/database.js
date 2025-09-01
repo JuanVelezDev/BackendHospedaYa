@@ -1,4 +1,4 @@
-const { Pool } = require("pg");
+import { Pool } from "pg";
 
 // Configuración de la base de datos con variables de entorno
 const dbConfig = {

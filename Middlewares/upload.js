@@ -1,4 +1,4 @@
-const multer = require("multer");
+import multer from "multer";
 
 // Usamos almacenamiento en memoria para subir a Cloudinary
 const storage = multer.memoryStorage();

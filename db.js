@@ -1,4 +1,4 @@
-const { Pool } = require("pg");
+import { Pool } from "pg";
 
 const db = new Pool({
     host: process.env.DB_HOST || "aws-1-us-east-2.pooler.supabase.com",
