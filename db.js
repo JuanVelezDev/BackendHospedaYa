@@ -9,4 +9,4 @@ const db = new Pool({
     ssl: { rejectUnauthorized: false } 
 });
 
-module.exports = db;
+export default db;

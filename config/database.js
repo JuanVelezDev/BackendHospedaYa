@@ -12,4 +12,4 @@ const dbConfig = {
 
 const db = new Pool(dbConfig);
 
-module.exports = db;
+export default db;
