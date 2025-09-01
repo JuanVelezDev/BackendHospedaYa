@@ -1,5 +1,5 @@
 import { Router } from "express";
-import db from "../database.js";
+import db from "../config/database.js";
 import upload from "../Middlewares/upload.js";
 import cloudinary from "../config/cloudinary.js";
 import streamifier from "streamifier";
